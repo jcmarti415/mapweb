@@ -16,15 +16,18 @@ The dataset is comprised of 185 rows and 59 columns. Each observation is a uniqu
 
 This were joined and summarized by country and by colombian deparment using QGIS. With this two choroplets maps were created and two time sequences. 
 
-Limitations
+
+### Limitations
 
 It is likely that these are not all the documents issued by the U.S. Embassy on 1999, wich makes difficult obtain a complete image of the country interests. Nevertheless it is stills a valuable historic source.
 
-The quality of the images, limitaitons on COR tehcnology and geolocalization also have to be considered. 
+The quality of the images, limitaitons of OCR tehcnology and geolocalization also have to be considered. 
 
 Non-official locations, such as those named by locals only, might not be detected becase are not included on the Geonames Gazeteer. 
 
 Some locations can get linked to unrelated events (words) becuase of the methods used.
+
+Word counting by countries and colombian departments means that frequent locations htend to have higher word counting on every category. Making difficult to see patterns on these particular territories.
 
 
 

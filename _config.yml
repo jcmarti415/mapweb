@@ -23,7 +23,7 @@ email: jm3002524@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   By Juan Martinez
 
-  As student in M.A. Digital Humanities at the University of Alberta 
+ M.A. Digital Humanities student at the University of Alberta 
   
   Edmonton, Canada. 
 baseurl: "mapweb" # the subpath of your site, e.g. /blog
