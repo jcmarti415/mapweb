@@ -10,9 +10,9 @@ The final output of this project is a dataset that includes the locations mentio
 
 This is a proof of concept for the browsing and analysis of these documents adding a geospatial dimension. 
 
-Profoundly beleiveing in open acces and colaboration, this project exclusively employed open-source tools, including the creation of this website.
+**Profoundly beleiveing in open acces and colaboration, this project exclusively employed open-source tools, including the creation of this website.**
 
-Tools used:
+###Tools used:
 
 [gImage][gImageReader] for OCR 
 
