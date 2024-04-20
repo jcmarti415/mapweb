@@ -1,30 +1,36 @@
 ---
 layout: post
-title:  "About This Project"
+title:  "Dataset creation"
 date:   2024-04-19 22:47:31 -0600
 categories: jekyll update
 ---
 
-The Colombian Armed conflict has been running for more than 60 years. In 2016 a peace process was signed between the Colombian government and the main guerrilla group, FARC-EP. The top priority of the process is to avoid more conflict, and for that, it is necessary to know the true nature of the war. All those involved in this conflict are invited to give their own point of view of the conflict, military leaders, guerrilla leaders, soldiers, victims, families, corporate owners, landlords, etc. Within this context, we have the database of the [National Security Archive][national-archive], comprised of declassified communications of the United States, from 1948 until 2009. In this paper, the diplomatic cables issued by the U.S. Embassy in Colombia from 1990 to 2009 were selected, for a total of 1009 files. Through OCR and text analysis we find that the most frequent topic in this document is the violations of human rights related to military affairs and military forces. The purpose of this project is to hel build the memory of the inner conflict in Colombia from the perspective of United States as an involved actor.
 
-The final output of this project is a dataset that includes the locations mentioned on the 74 diplomatic cables issued in 1999 by the U.S. Embassy located in Bogota Colombia. This dataset  have information related to the location identified, such as coordinates (for digital mapping), name, country, and ISO code, among others. 
+The documents stored by DNSA are PDF files comprised of scanned images of the original print. Therefore, the text needs to be digitized, for this open-source software is used to do OCR. Due to the limitations of OCR technology, the quality of the original files and because some parts are redacted, the initial output of the software needs to be verified and improved. This was done manually to avoid losing important information.
 
-This is a proof of concept for the browsing and analysis of these documents adding a geospatial dimension. 
+For the identification of the location within the text, a Python library called [Mordecai][mordecai] was used. This module requires using a docker container and an index created based on the Geonames.org gazetteer. The library is well documented, and it needs a good amount of modification to be able to run locally. Other alternatives were considered; however, Python allows for better adaptation of the library to the project needs.
 
-Tools used:
+After obtaining the locations, words related to killing, kidnapping and drugs were counted by location and document, allowing to see how certain territories are mentioned around these topics. Any other crime related word such as violence, assaults or stealing are on the “other” category.
 
-[gImage][gImageReader] for OCR 
+The dataset is comprised of 185 rows and 59 columns. Each observation is a unique combination of locaiton and document name. The other columns includes coordinates, date of the document, word counting, country ISO code, among others. 
 
-[Mordecai][mordecai] for geoparsing
+This were joined and summarized by country and by colombian deparment using QGIS. With this two choroplets maps were created and two time sequences. 
 
-[QGIS][QGIS] for digital mapping
+Limitations
 
-[Qgis2Web][qgis2web] QGIS Plugin for tinteractive maps
+It is likely that these are not all the documents issued by the U.S. Embassy on 1999, wich makes difficult obtain a complete image of the country interests. Nevertheless it is stills a valuable historic source.
+
+The quality of the images, limitaitons on COR tehcnology and geolocalization also have to be considered. 
+
+Non-official locations, such as those named by locals only, might not be detected becase are not included on the Geonames Gazeteer. 
+
+Some locations can get linked to unrelated events (words) becuase of the methods used.
 
 
 
-[national-archive]: https://nsarchive.gwu.edu/project/colombia-project
-[gimagereader]:https://github.com/manisandro/gImageReader
+
+
+
+
+
 [mordecai]:https://github.com/openeventdata/mordecai
-[QGIS]: https://www.qgis.org/en/site/
-[qgis2web]: https://github.com/qgis2web/qgis2web
